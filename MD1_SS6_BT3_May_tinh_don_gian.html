@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css_calculator.css">
+
+</head>
+<body>
+
+<div id="container">
+    <table>
+        <tr>
+            <td colspan="4"><input class="input" type="text" id="input_number"></td>
+        </tr>
+        <tr>
+            <td><button class="button" type="button" onclick="inputNumber('1')">1</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('2')">2</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('3')">3</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button class="button" type="button" onclick="inputNumber('4')">4</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('5')">5</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('6')">6</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="button" type="button" onclick="inputNumber('7')">7</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('8')">8</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('9')">9</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button class="button" type="button" onclick="clearCalculator()">C</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('0')">0</button></td>
+            <td><button class="button" type="button" onclick="result()">=</button></td>
+            <td><button class="button" type="button" onclick="inputNumber('/')">/</button></td>
+        </tr>
+
+    </table>
+</div>
+
+<script>
+
+    function inputNumber(number){
+        document.getElementById('input_number').value += number;
+    }
+
+    function result(){
+        let input = document.getElementById('input_number').value;
+        let result = eval(input);
+        document.getElementById('input_number').value = result;
+    }
+
+    function clearCalculator(){
+        document.getElementById('input_number').value ='';
+    }
+
+</script>
+
+</body>
+</html>
